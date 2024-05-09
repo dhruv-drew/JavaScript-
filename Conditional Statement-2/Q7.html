@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Enter first number: </h1>
+    <input type="number" id="in1">
+    <h1>Enter second number: </h1>
+    <input type="number" id="in2">
+    <h1>Enter third number: </h1>
+    <input type="number" id="in3">
+    <h1>Before</h1>
+    
+    <h1 id="s1"></h1>
+    <h1 id="s2"></h1>
+    <h1 id="s3"></h1>
+    
+    <h1>After</h1>
+    <h1 id="j1"></h1>
+    <h1 id="j2"></h1>
+    <h1 id="j3"></h1>
+</body>
+
+</html>
+<script>
+    let a = document.getElementById("in1").value
+    let b = document.getElementById("in2").value
+    let c = document.getElementById("in3").value
+
+    document.getElementById("s1").innerHTML = "a = " + a
+    document.getElementById("s2").innerHTML = "b = " + b
+    document.getElementById("s3").innerHTML = "c = " + c
+    
+    let t = a
+    a = b
+    b = c
+    c = t
+
+    document.getElementById("j1").innerHTML = "a = " + a
+    document.getElementById("j2").innerHTML = "b = " + b
+    document.getElementById("j3").innerHTML = "c = " + c
+
+</script>
