@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <br>
+        <h1>Check your triangle.</h1>
+        <br><br>
+
+        <h1>Enter first angle: </h1>
+        <input type="text" id="in1">
+        <h1>Enter second angle: </h1>
+        <input type="text" id="in2">
+        <h1>Enter third angle: </h1>
+        <input type="text" id="in3">
+
+        <h1 id="ans"></h1>
+        <h1 id="an"></h1>
+    </center>
+</body>
+
+</html>
+<script>
+    let first_angle = document.getElementById("in1").value
+    let second_angle = document.getElementById("in2").value
+    let third_angle = document.getElementById("in3").value
+    let sum = +first_angle + +second_angle + +third_angle
+
+    if (sum === 180) {
+
+        document.getElementById("an").innerHTML = "It is a Triangle"
+
+        if (first_angle === "" && second_angle === "" && third_angle === "") {
+            document.getElementById("ans").innerHTML = "Please enter correct angles."
+        } else {
+
+            if (first_angle === second_angle && second_angle === third_angle && third_angle === first_angle) {
+                document.getElementById("ans").innerHTML = "Equilateral Triangle"
+            }
+            else if (first_angle === second_angle || second_angle === third_angle || third_angle === first_angle) {
+                document.getElementById("ans").innerHTML = "Isosceles Triangle"
+            }
+            else {
+                document.getElementById("ans").innerHTML = "Scalene Triangle"
+            }
+        }
+    } else {
+        document.getElementById("an").innerHTML = "It is not a Triangle"
+        
+    }
+    
+
+
+
+</script>
