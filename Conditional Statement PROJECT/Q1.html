@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex;justify-content: center; gap: 5%;font-family: Arial, Helvetica, sans-serif;">
+    <center style="border: 1px solid ; padding: 5%;">
+        <h1>Enter Total members</h1>
+        <input style="width: 100%; border: 1px solid rgba(0, 0, 0, 0.266); " type="number" id="in1">
+        
+        <br>
+        <h1>Enter number of people below age 12: </h1>
+        <input style="width: 100%; border: 1px solid rgba(0, 0, 0, 0.266); " type="number" id="in2">
+        <h1>Enter number of people below age 18: </h1>
+        <input style="width: 100%; border: 1px solid rgba(0, 0, 0, 0.266); " type="number" id="in3">
+        <h1>Enter number of people below age 60: </h1>
+        <input style="width: 100%; border: 1px solid rgba(0, 0, 0, 0.266); " type="number" id="in5">
+        <h1>Enter number of people above age 60: </h1>
+        <input style="width: 100%; border: 1px solid rgba(0, 0, 0, 0.266); " type="number" id="in6">
+
+        
+    </center>
+    <center style="border: 1px solid ; padding: 5%; display: flex; flex-direction: column; justify-content: space-evenly;">
+       <div>
+        <h1 id="age_below_12"></h1>
+        <h1 id="age_below_18"></h1>
+        <h1 id="age_below_20"></h1>
+        <h1 id="age_below_60"></h1>
+        <h1 id="age_above_60"></h1>
+       </div>
+        
+        <div>
+            <h1 style="border: 1px solid rgba(0, 0, 0, 0.266);" id="total_amount"></h1>
+        </div>
+
+    </center>
+</body>
+</html>
+<script>
+    let total_people = document.getElementById("in1").value
+    let people_below_12 = document.getElementById("in2").value
+    let people_below_18 = document.getElementById("in3").value
+    let people_below_60 = document.getElementById("in5").value
+    let people_above_60 = document.getElementById("in6").value
+
+    document.getElementById("age_below_12").innerHTML = "Age Below 12 Ticket = " + 5 
+    document.getElementById("age_below_18").innerHTML = "Age Below 18 Ticket = " + 10 
+    document.getElementById("age_below_60").innerHTML = "Age Below 60 Ticket = " + 20 
+    document.getElementById("age_above_60").innerHTML = "Age Above 60 Ticket = " + 15 
+
+    let total_12 = people_below_12 * 5
+    let total_18 = people_below_18 * 10
+    let total_60 = people_below_60 * 20
+    let total_above_60 = people_above_60 * 15
+    
+    let total_amount = total_12 + total_18 + total_60 + total_above_60 
+    
+    document.getElementById("total_amount").innerHTML = "total amount : " + total_amount
+</script>

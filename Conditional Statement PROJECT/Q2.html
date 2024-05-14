@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="display: flex;justify-content: center; gap: 5%;font-family: Arial, Helvetica, sans-serif;">
+    <center style="border: 1px solid ; padding: 5%;">
+        <h1>Enter Total Amount</h1>
+        <input style="width: 100%; border: 1px solid rgba(0, 0, 0, 0.266); " type="number" id="in1">
+
+        <br>
+
+
+
+    </center>
+    <center
+        style="border: 1px solid ; padding: 5%; display: flex; flex-direction: column; justify-content: space-evenly;">
+
+
+        <div>
+            <h1 style="border: 1px solid rgba(0, 0, 0, 0.266);padding: 5%;" id="total_amount"></h1>
+        </div>
+
+    </center>
+</body>
+
+</html>
+<script>
+    let total_amount = document.getElementById("in1").value
+    
+
+
+    if (total_amount >= 100) {
+        let percent = (total_amount * 20)/100
+        total_amount = total_amount - percent
+        
+        document.getElementById("total_amount").innerHTML ="Total Amount : "+ total_amount
+    } else if(total_amount >= 50) {
+        let percent = (total_amount * 10)/100
+        total_amount = total_amount - percent
+        
+        document.getElementById("total_amount").innerHTML ="Total Amount : "+ total_amount
+    }
+    else{
+        document.getElementById("total_amount").innerHTML ="Total Amount : "+ total_amount
+
+    }
+
+</script>
