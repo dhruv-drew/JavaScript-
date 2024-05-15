@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <center>
+        <h1>--------------Select Your Language--------------</h1>
+        
+        <select style="height: 40px; width: 140px;" name="operator" id="language">
+            
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+        </select>
+
+        <br><br>
+        <h1  style="border: 1px solid rgba(0, 0, 0, 0.184); width: 400px;" id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let language = document.getElementById("language").value
+
+   
+        
+    switch (language) {
+        case "English":
+            document.getElementById("ans").innerHTML = "Hello."
+            break;
+        case "Spanish":
+            document.getElementById("ans").innerHTML =  "!Hola."
+            break;
+        case "French":
+            document.getElementById("ans").innerHTML =  "!Bonjour"
+            break;
+       
+    
+        
+    }
+    
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <center>
+        <h1>--------------Select Your Favorite Coffee--------------</h1>
+        
+        <select style="height: 40px; width: 240px;" name="operator" id="language">
+            
+            <option value="Java Chip Frappuccino">Java Chip Frappuccino</option>
+            <option value="Caffe Americano">Caffe Americano</option>
+            <option value="Cold coffee">Cold coffee</option>
+            <option value="Double Chocolate Chip Frappuccino">Double Chocolate Chip Frappuccino</option>
+            <option value="Cappuccino">Cappuccino</option>
+        </select>
+
+        <br><br>
+        <h1  style="border: 1px solid rgba(0, 0, 0, 0.184); width: 400px;" id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let language = document.getElementById("language").value
+
+   
+        
+    switch (language) {
+        case "Java Chip Frappuccino":
+            document.getElementById("ans").innerHTML = "382.25 ₹"
+            break;
+        case "Caffe Americano":
+            document.getElementById("ans").innerHTML =  " 278.25 ₹"
+            break;
+        case "Cold coffee":
+            document.getElementById("ans").innerHTML =  " 372.75 ₹"
+            break;
+        case "Double Chocolate Chip Frappuccino":
+            document.getElementById("ans").innerHTML =  "414.75 ₹"
+            break;
+        case "Cappuccino":
+            document.getElementById("ans").innerHTML =  "299.25 ₹"
+            break;
+       
+    
+        
+    }
+    
+</script>

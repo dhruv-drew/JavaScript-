@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <div style="height: 50%; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <center >
+            <h1>Day of the week</h1>
+            <h1>Enter day of the week : </h1>
+            <input style="height: 30px; width: 130px; padding: 3px; " type="text" id="day">
+            <br><br>
+            <h1 style="border: 1px solid rgba(0, 0, 0, 0.184); width: 400px;" id="ans"></h1>
+        </center>
+    </div>
+</body>
+
+</html>
+<script>
+    let day = document.getElementById("day").value
+
+    if (day === "") {
+        document.getElementById("ans").innerHTML = "............"
+    } else {
+        switch (day) {
+            case "monday":
+                document.getElementById("ans").innerHTML = "It's the start of the workweek"
+                break;
+            case "tuesday":
+                document.getElementById("ans").innerHTML = "It's some other day."
+                break;
+            case "wednesday":
+                document.getElementById("ans").innerHTML = "It's some other day."
+                break;
+            case "thursday":
+                document.getElementById("ans").innerHTML = "It's some other day."
+                break;
+            case "friday":
+                document.getElementById("ans").innerHTML = "It's almost the weekend!"
+                break;
+            case "saturday":
+                document.getElementById("ans").innerHTML = "It's some other day."
+                break;
+
+            default:
+                document.getElementById("ans").innerHTML = "Invalid Input"
+                break;
+        }
+    }
+</script>
