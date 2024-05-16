@@ -20,15 +20,11 @@
 <script>
     var number = document.getElementById("in1").value
     
-    if (number === "") {
-        document.getElementById("ans").innerHTML = ""
-    } else {
-        if (+number % 2 == 0) {
-        document.getElementById("ans").innerHTML = "even"
-    } else {
-        
-        document.getElementById("ans").innerHTML = "odd"
-    }
+    for(var i = 1; i <= number; i ++){
+        if (i % 2 === 0) {
+            document.getElementById("ans").innerHTML += i + "<br>"
+        }
+       
     }
     
 </script>
