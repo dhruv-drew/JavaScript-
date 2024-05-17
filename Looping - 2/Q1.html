@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Count Number of Digits in a Number</title>
+  </head>
+  <body>
+   <center>
+    <h1>Count Number of Digits in a Number</h1>
+    <label for="num">Enter a number:</label>
+    <input type="number" id="num" name="num"><br><br>
+    <p id="result"></p>
+   </center>
+
+    <script>
+      
+        // Get user input
+        const num = document.getElementById("num").value;
+
+        // Initialize digit count
+        let digitCount = 0;
+
+        // Use do-while loop to count digits
+        let numCopy = num;
+        do {
+          numCopy = Math.floor(numCopy / 10);
+          digitCount++;
+        } while (numCopy > 0);
+
+        // Print result
+        document.getElementById("result").innerHTML = "The number of digits in " + num + " is: " + digitCount;
+     
+    </script>
+  </body>
+</html>

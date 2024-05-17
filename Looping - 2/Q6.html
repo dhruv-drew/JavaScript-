@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <center>
+       
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let i = 20
+    let count = 0
+    do {
+        if(i % 2 !== 0){
+            count++
+        }
+        i++
+    } while (i <= 40);
+    document.getElementById("ans").innerHTML ="Total number of odd numbers between 20 to 40 = " + count
+</script>
