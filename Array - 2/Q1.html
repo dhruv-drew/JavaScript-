@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <center>
+        <h1 id="ans"></h1>
+        <h1 id="ans2"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let arr = [2,9,10,25]
+    document.getElementById("ans").innerHTML ="Origanal array : " + arr
+    let double = arr.map((el)=>{
+        return el + el
+    })
+    document.getElementById("ans2").innerHTML ="New array : " + double
+</script>
