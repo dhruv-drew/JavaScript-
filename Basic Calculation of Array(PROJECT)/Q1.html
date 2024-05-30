@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <center>
+        <h1 id="ans"></h1>
+    </center>
+</body>
+
+</html>
+<script>
+    let arr = ["assignment", "problem", "media", "upload"]
+
+    let str_check = arr.filter((el) => {
+        return el[0] === "a" || el[el.length - 1] === "a"
+    })
+
+    document.getElementById("ans").innerHTML = str_check
+
+</script>
