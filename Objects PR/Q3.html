@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="ans"></h1>
+</body>
+
+</html>
+<script>
+    let books = [
+        { title: "Atomic Habits", price: "50", author: "James Clear", Quantity: "5" },
+        { title: "Rich Dad Poor Dad", price: "120", author: "Robert Kiyosaki", Quantity: "2" },
+        { title: "House of the dragons", price: "60", author: "Someone", Quantity: "0" },
+        { title: "House of the dragons part - 2", price: "40", author: "Someone else", Quantity: "3" },
+    ]
+
+    let ans = books.filter((el) => {
+        if (el.price < 60 && el.Quantity > 0) {
+
+            return el
+        }
+        
+    })
+    console.log(ans);
+</script>
