@@ -14,16 +14,19 @@
 </html>
 <script>
     let books = [
-        { title: "Atomic Habits", price: "50", author: "James Clear", Quantity: "5" },
+        { title: "Atomic Habits", price: "40", author: "James Clear", Quantity: "5" },
         { title: "Rich Dad Poor Dad", price: "120", author: "Robert Kiyosaki", Quantity: "2" },
         { title: "House of the dragons", price: "60", author: "Someone", Quantity: "0" },
-        { title: "House of the dragons part - 2", price: "40", author: "Someone else", Quantity: "3" },
+        { title: "House of the dragons part - 2", price: "90", author: "Someone else", Quantity: "3" },
     ]
 
     let ans = books.filter((el) => {
         if (el.price < 60 && el.Quantity > 0) {
 
             return el
+        }
+        else{
+            return null
         }
         
     })
