@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #64f790, #551fd2);
+            background-size: 400% 400%;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: gradientAnimation 10s ease infinite;
+            filter: blur(0px);
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 3%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, select:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #00bbff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #53cf21;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        center {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="submit" id="submit">
+        <center><span id="err" ></span></center>
+        <label for="name">Name</label>
+        <input type="text" id="name">
+
+        <label for="email">Email ID</label>
+        <input type="text" id="email">
+        
+        <label for="ps">Password</label>
+        <input type="password" id="ps">
+
+        <label for="cps">Confirm Password</label>
+        <input type="password" id="cps">
+
+        <label for="date">Date</label>
+        <input type="date" id="date">
+
+        <label for="hobby">Hobby</label>
+        <input type="text" id="hobby">
+
+        <label for="Gender">Gender</label>
+        <select id="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+<script>
+    document.getElementById("submit").onsubmit = function(event){
+        document.getElementById("err").innerHTML = ""
+        event.preventDefault()
+
+        try {
+            let name = document.getElementById("name").value
+            let email = document.getElementById("email").value
+            let password = document.getElementById("ps").value
+            let confir_password = document.getElementById("cps").value
+            let date = document.getElementById("date").value
+            let hobby = document.getElementById("hobby").value
+            // let gender = document.getElementById("Gender").value
+
+            if (name === "") {
+                throw new Error("Please enter the required detail.")
+            }
+            
+            if (email === "") {
+                throw new Error("Please enter the required detail.")
+            }
+            
+            if (password === "") {
+                throw new Error("Please enter the required detail.")
+            }
+            if (confir_password === "") {
+                throw new Error("Please enter the required detail.")
+            }
+            
+            if (date === "") {
+                throw new Error("Please enter the required detail.")
+            }
+            if (hobby === "") {
+                throw new Error("Please enter the required detail.")
+            }
+            // if (gender === "") {
+            //     throw new Error("Please enter the required detail.")
+            // }
+            
+            if(password.length < 8){
+                throw new Error("Password should have at least 8 characters")
+            }
+            
+            if(password !== confir_password){
+                throw new Error("Password does not match.")
+            }
+
+        } catch (e) {
+            document.getElementById("err").innerHTML = e.message
+            document.getElementById("err").style.color = "red"
+        }
+    }
+</script>
