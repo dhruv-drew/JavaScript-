@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            background: linear-gradient(to bottom, #00f, #00008b);
+        }
+        .sign{
+            
+            background: linear-gradient(to bottom, #00f, #00008b);
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="main" class="h-screen w-screen bg-[#000]  flex justify-center items-center ">
+        <div class="form h-[85vh] w-[40vw] bg-[#fff] rounded-[20px] overflow-hidden">
+            <form action="" id="submit" class="h-full w-full flex flex-col justify-center ">
+                <div class="h-[10%] w-[100%] flex justify-center items-center flex-col ">
+                    <a href="LogIn.html" class="   text-[1.2vw] font-[500] text-orange-400">Log In</a>
+                    <h1 class=" text-[2vw] font-[700] ">Registration</h1>
+                </div>
+                <h1 id="err" class="text-center text-red-600 text-[1vw] font-[500]"></h1>
+                <div class="h-[85%] w-[100%] flex flex-col pt-[10%] items-center gap-[4%]">
+                    <div class="flex flex-col w-[70%] gap-[10px]">
+                        <label for="username" class="text-[1.5vw] font-[500]">Username</label>
+                        <input type="text" id="username"
+                            class="bg-transparent border-[1.5px] border-[#111] rounded-[10px] h-[35px]">
+                    </div>
+                    <div class="flex flex-col w-[70%] gap-[10px]">
+                        <label for="username" class="text-[1.5vw] font-[500]">Email Id</label>
+                        <input type="text" id="email"
+                            class="bg-transparent border-[1.5px] border-[#111] rounded-[10px] h-[35px]">
+                    </div>
+                    <div class="flex flex-col w-[70%] gap-[10px]">
+                        <label for="username" class="text-[1.5vw] font-[500]">password</label>
+                        <input type="password" id="password"
+                            class="bg-transparent border-[1.5px] border-[#111] rounded-[10px] h-[35px]">
+                    </div>
+                    <div class="flex flex-col w-[70%] gap-[10px]">
+                        <label for="username" class="text-[1.5vw] font-[500]">Confirm Password</label>
+                        <input type="password" id="cpw"
+                            class="bg-transparent border-[1.5px] border-[#111] rounded-[10px] h-[35px]">
+                    </div>
+                    <div class="flex flex-col w-[70%] gap-[10px]">
+                        <button type="submit"
+                            class="w-[100%] mt-[20px] rounded-[4px] text-[#fff] h-[35px] sign">Sign In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    $(document).ready(function () {
+
+        $("#submit").submit(function (event) {
+            event.preventDefault()
+            $("#err").text("");
+
+            let username = $("#username").val()
+            let username_regex = /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/
+
+            if (username === "") {
+                $("#err").text("Enter a valid username.")
+            }
+            else {
+                if (!username_regex.test(username)) {
+                    $("#err").text("Enter a valid username.")
+                }
+
+                let email = $("#email").val()
+                let email_regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+
+                if (email === "") {
+                    
+                    $("#err").text("Enter a valid Email Id.")
+                }
+                else{
+                    if (!email_regex.test(email)) {
+                        
+                        $("#err").text("Enter a valid Email Id.")
+                    }
+                }
+
+                let password = $("#password").val()
+                let password_regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+                let confirm_password = $("#cpw").val()
+
+
+                if (password === "") {
+                    $("#err").text("Enter a should have 1 uppercase charecter, 1 numeric, 1 special charecter.")
+                }
+                else {
+                    if (!password_regex.test(password)) {
+                        $("#err").text("Enter a should have 1 uppercase charecter, 1 numeric, 1 special charecter.")
+
+                    }
+                }
+
+                if (password !== confirm_password) {
+                    $("#err").text("Password does not match.")
+                }
+            }
+        })
+
+    })
+
+</script>

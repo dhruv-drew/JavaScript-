@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #main{
+            background: linear-gradient(to bottom, #00f, #00008b);
+        }
+        .sign{
+            
+            background: linear-gradient(to bottom, #00f, #00008b);
+        }
+    </style>
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="main" class="h-screen w-screen bg-[#000]  flex justify-center items-center ">
+        <div class="form h-[85vh] w-[40vw] bg-[#fff] rounded-[20px] overflow-hidden">
+            <form action="" id="submit" class="h-full w-full flex flex-col justify-center ">
+                <a href="Registration.html" class="text-end  m-[3%] text-[1.2vw] font-[500] text-orange-400">Sign Up</a>
+                <div class="h-[25%] w-[100%] flex justify-center items-center flex-col ">
+                    <h1 class=" text-[3vw] font-[700] mt-[10%]">Login</h1>
+                </div>
+                <h1 id="err" class="text-center text-red-600 text-[1.5vw] font-[500]"></h1>
+                <div class="h-[85%] w-[100%] flex flex-col pt-[10%] items-center gap-[5%]">
+                    <div class="flex flex-col w-[70%] gap-[10px]">
+                        <label for="username" class="text-[1.5vw] font-[500]">Username</label>
+                        <input type="text" id="username"
+                            class="bg-transparent border-[1.5px] border-[#111] rounded-[10px] h-[35px]">
+                    </div>
+                    <div class="flex flex-col w-[70%] gap-[10px]">
+                        <label for="username" class="text-[1.5vw] font-[500]">password</label>
+                        <input type="password" id="password"
+                            class="bg-transparent border-[1.5px] border-[#111] rounded-[10px] h-[35px]">
+                    </div>
+                    <div class="flex flex-col w-[70%] gap-[10px]">
+                        <button type="submit"
+                            class="sign w-[100%] mt-[20px] rounded-[4px] text-[#fff] h-[35px] bg-orange-600">LogIn</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+$(document).ready(function(){
+
+$("#submit").submit(function(event){
+    event.preventDefault()
+    $("#err").text("");
+    
+   let username = $("#username").val()
+   let username_regex = /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/
+
+   if(username === ""){
+        $("#err").text("Enter a valid username.")
+    }
+    else{
+        if (!username_regex.test(username)) {
+        $("#err").text("Enter a valid username.")
+    }
+    
+    let password = $("#password").val()
+    let password_regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+    
+    if (password === "") {
+        $("#err").text("Enter a should have 1 uppercase charecter, 1 numeric, 1 special charecter.")
+    }
+    else{
+        if (!password_regex.test(password)) {
+            $("#err").text("Enter a should have 1 uppercase charecter, 1 numeric, 1 special charecter.")
+            
+        }
+    }
+   }
+})
+
+})
+
+</script>
