@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <h1 id="ans"></h1>
+        <img src="https://imgs.search.brave.com/EWLsUOrJ6oAmTEOpALQhAgpI1O2sDq2qyp7QPywSF9s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YTEuZ2lwaHkuY29t/L21lZGlhL3YxLlky/bGtQVGM1TUdJM05q/RXhZbVppY1RsNVp6/bDFOekJ5Y0dVellU/Tm9PSEpoTlhkM2FY/Z3diRzFuYVdjNVpU/QmliR2x6TnlabGNE/MTJNVjkyYVdSbGIz/TmZjMlZoY21Ob0pt/TjBQWFkva1RqclU3/OG5Db2RrcHNvYXR1/LzIwMHcuZ2lm.gif" alt="">
+    
+</body>
+</html>
+<script>
+    let count = 10
+    let stop = setInterval(() => {
+
+count--
+document.querySelector("#ans").innerHTML = count
+if (count === 0) {
+    clearInterval(stop)
+    document.querySelector("img").style.display = "block"
+    document.querySelector("h1").style.display = "none"
+    
+}
+}, 1000);
+    
+     
+    
+</script>

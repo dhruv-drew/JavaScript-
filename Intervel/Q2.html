@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #main{
+            height: 130px;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            background-color: #02395a;
+            gap: 10%;
+        }
+        .p1{
+            height: 100%;
+            width: 10%;
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            color: #fff;
+        }
+        .p1 h1{
+            font-size: 1.2vw;
+        }
+
+        /* body{
+            /* height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center; */
+         */
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="main">
+        <div id="p1" class="p1">
+            <i style="font-size: 1.4vw;" class="fa-regular fa-user"></i>
+            <h1 id="ans1"> +</h1>
+            <h5>User Count</h5>
+        </div>
+        <div id="p2" class="p1">
+            <i class="fa-regular fa-building"></i>
+            <h1 id="ans2"> +</h1>
+            <h5>Branches</h5>
+        </div>
+        <div id="p3" class="p1">
+            <i class="fa-solid fa-certificate"></i>
+            <h1 id="ans3"> +</h1>
+            <h5>Certificate</h5>
+        </div>
+        <div id="p4" class="p1">
+            <i style="font-size: 1.4vw;" class="fa-regular fa-user"></i>
+            <h1 id="ans4"> +</h1>
+            <h5>Approved Courses</h5>
+        </div>
+        <div id="p5" class="p1">
+            <i style="font-size: 1.4vw;" class="fa-regular fa-user"></i>
+            <h1 id="ans5"> +</h1>
+            <h5>Compenies Tie-up</h5>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function user_count(){
+        let count = 0
+        let stop = setInterval(() => {
+            count+=100
+            document.getElementById("ans1").innerHTML = count + "+"
+            if (count === 37500) {
+                clearInterval(stop)
+            }
+        }, 10);
+        
+    }
+    user_count()
+
+    function branches_count(){
+        let count = 0
+        let stop = setInterval(() => {
+            count++
+            document.getElementById("ans2").innerHTML = count + "+"
+            if (count === 22) {
+                clearInterval(stop)
+            }
+        }, 70);
+        
+    }
+    branches_count()
+
+    function certificate_count(){
+        let count = 0
+        let stop = setInterval(() => {
+            count++
+            document.getElementById("ans3").innerHTML = count + "+"
+            if (count === 8) {
+                clearInterval(stop)
+            }
+        }, 500);
+        
+    }
+    certificate_count()
+
+    function Aproved_courses_count(){
+        let count = 0
+        let stop = setInterval(() => {
+            count++
+            document.getElementById("ans4").innerHTML = count + "+"
+            if (count === 50) {
+                clearInterval(stop)
+            }
+        }, 200);
+        
+    }
+    Aproved_courses_count()
+
+    function compnies_tieup_count(){
+        let count = 0
+        let stop = setInterval(() => {
+            count+= 100
+            document.getElementById("ans5").innerHTML = count + "+"
+            if (count === 1500) {
+                clearInterval(stop)
+            }
+        }, 100);
+        
+    }
+    compnies_tieup_count()
+</script>
