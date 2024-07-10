@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main{
+            height: 100vh;
+            width: 100vw;
+            background-color: #111;
+
+        }
+        img{
+            height: 50vh;
+            width: 100%;
+            object-fit: contain;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="slider">
+            <img class="imgs" src="https://cdn.pixabay.com/photo/2020/03/08/22/50/kookabura-4913972_1280.jpg" alt="">
+            <img class="imgs" src="https://cdn.pixabay.com/photo/2021/08/21/11/29/kingfisher-6562537_960_720.jpg" alt="">
+            <img class="imgs" src="https://cdn.pixabay.com/photo/2021/04/28/21/59/kingfisher-6215073_960_720.jpg" alt="">
+        </div>
+        <div style="color: #fff; display: flex; justify-content: center; align-items: center; margin-top: 10%; font-size: 4vw; flex-direction: column;" class="counter">
+            <h1 style="font-size: 2vw;">User Count</h1>
+            <h1 id="count"></h1>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+   let img = document.querySelectorAll("img")
+    let index = 0
+
+    function slides(index){
+        for(let i = 0 ; i < img.length; i++){
+            img[i].style.display = "none"
+        }
+        img[index].style.display = "block"
+    }
+
+    
+    function show(){
+        setInterval(()=>{
+            slides(index)
+            index++
+
+            if(index === img.length){
+                index = 0
+            }
+
+        },1000)
+    }
+    show()
+    
+
+    let count = 0
+    let stop = setInterval(() => {
+        count+=100
+        document.getElementById("count").innerHTML = count + "+"
+        if (count === 35000) {
+            count = 0
+            clearInterval(stop)
+        }
+    }, 10);
+    
+</script>
