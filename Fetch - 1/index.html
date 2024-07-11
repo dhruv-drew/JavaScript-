@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+</body>
+</html>
+<script>
+    fetch("https://fakestoreapi.com/carts")
+    .then((res)=>{
+        return res.json()
+    }).then((json)=>{
+        // console.log(json)
+        // document.querySelector("h1").innerHTML = json.id
+        el(json)
+    }).catch((err)=>{
+        // console.log(err)
+        // document.querySelector("h2").innerHTML = err
+    })
+    function el(json){
+        json.map((el)=>{
+            let Div = document.createElement("div");
+            let h1 = document.createElement("h1");
+            h1.innerHTML = el.id
+            let Div2 = document.createElement("h1");
+            Div2.innerHTML = el.userId
+            let Div3 = document.createElement("h1");
+            Div3.innerHTML = el.date
+            Div.append(Div2,Div2,Div3)
+            document.querySelector("#main").append(Div)
+        })
+    }
+
+
+
+</script>
