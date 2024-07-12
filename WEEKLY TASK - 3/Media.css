@@ -1,0 +1,23 @@
+@media (max-width: 576px) {
+    .nav-ad{
+        font-size: 2vw;
+    }
+    .nav-main-1 h1{
+        font-size: 4vw;
+    }
+    .nav-main-2 a{
+        display: none;
+    }
+    .nav-main-3{
+        width: 20%;
+        height: 100%;
+    }
+    .nav-main-3 i{
+        font-size: 4vw;
+    }
+}
+@media (min-width: 578px) {
+    .nav-main-2 i{
+        display: none;
+    }
+}
