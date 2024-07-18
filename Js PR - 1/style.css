@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow-x: hidden;
+}
+.main-img{
+    /* background-image: url(/h124_location_DATA-REISSUE_2024-graphics_01.avif); */
+    background-size: cover;
+}
+.nav-main h4{
+    transition: 0.2s;
+}
+.nav-main i{
+    transition: 0.2s;
+}
+
+.nav-main h4:hover{
+    color: #ec4573;
+    cursor: pointer;
+}
+.nav-main i:hover{
+    color: #ec4573;
+    cursor: pointer;
+}
+
+.main-img-btn{
+    transition: 0.3s;
+}
+
+.imgs{
+    display: none;
+}
+
+.page2-img:hover{
+    background-size: 120%;
+}
+
+.page3-btns button:hover{
+    color: #ec4573;
+    border: 1px solid #ec4573;
+}
